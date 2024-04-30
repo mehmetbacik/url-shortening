@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Header: React.FC = () => {
   return (
-    <header className="bg-blue-500 p-4">
+    <header className="bg-blue-500 p-4 header">
       <div className="container mx-auto flex justify-between items-center">
         <h1 className="text-white text-2xl font-bold">URL Shortening</h1>
         <nav>
