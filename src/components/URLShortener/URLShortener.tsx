@@ -18,26 +18,28 @@ const URLShortener: React.FC = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleFormSubmit}>
-        <input
-          type="text"
-          value={originalUrl}
-          onChange={(e) => setOriginalUrl(e.target.value)}
-          placeholder="Shorten a link here..."
-        />
-        <button type="submit">Shorten It!</button>
-      </form>
-      {shortenedUrl && (
-        <div>
-          <p>Shortened URL: {shortenedUrl}</p>
-          <button onClick={() => navigator.clipboard.writeText(shortenedUrl)}>
-            Copy
-          </button>
-        </div>
-      )}
-      {error && <p>{error}</p>}
-    </div>
+    <section className="url-shortener">
+      <div>
+        <form onSubmit={handleFormSubmit}>
+          <input
+            type="text"
+            value={originalUrl}
+            onChange={(e) => setOriginalUrl(e.target.value)}
+            placeholder="Shorten a link here..."
+          />
+          <button type="submit">Shorten It!</button>
+        </form>
+        {shortenedUrl && (
+          <div>
+            <p>Shortened URL: {shortenedUrl}</p>
+            <button onClick={() => navigator.clipboard.writeText(shortenedUrl)}>
+              Copy
+            </button>
+          </div>
+        )}
+        {error && <p>{error}</p>}
+      </div>
+    </section>
   );
 };
 
