@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+import { shortenUrl } from "../../services/api";
 
 const URLShortener: React.FC = () => {
   const [originalUrl, setOriginalUrl] = useState("");
@@ -9,10 +9,8 @@ const URLShortener: React.FC = () => {
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await axios.post("https://cleanuri.com/api/v1/shorten", {
-        url: encodeURIComponent(originalUrl),
-      });
-      setShortenedUrl(response.data.result_url);
+      const response = await shortenUrl(originalUrl);
+      setShortenedUrl(response.result_url);
       setError("");
     } catch (error) {
       setError("Failed to shorten URL. Please try again.");
