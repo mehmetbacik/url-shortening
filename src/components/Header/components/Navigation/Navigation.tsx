@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Menu: React.FC = () => {
+const Navigation: React.FC = () => {
   return (
     <nav>
       <ul className="flex space-x-4">
@@ -34,4 +34,4 @@ const Menu: React.FC = () => {
   );
 };
 
-export default Menu;
+export default Navigation;
