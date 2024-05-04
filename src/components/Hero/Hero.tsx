@@ -1,22 +1,11 @@
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
+import { SwiperView } from "./components/Swiper";
 
 const Hero: React.FC = () => {
   return (
     <section className="hero">
       <div className="container mx-auto text-center">
-        <Swiper className="mySwiper">
-          <SwiperSlide>Slide 1</SwiperSlide>
-          <SwiperSlide>Slide 2</SwiperSlide>
-          <SwiperSlide>Slide 3</SwiperSlide>
-          <SwiperSlide>Slide 4</SwiperSlide>
-          <SwiperSlide>Slide 5</SwiperSlide>
-          <SwiperSlide>Slide 6</SwiperSlide>
-          <SwiperSlide>Slide 7</SwiperSlide>
-          <SwiperSlide>Slide 8</SwiperSlide>
-          <SwiperSlide>Slide 9</SwiperSlide>
-        </Swiper>
+        <SwiperView />
       </div>
     </section>
   );
