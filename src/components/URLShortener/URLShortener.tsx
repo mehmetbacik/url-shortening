@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { shortenUrl } from "../../services/api";
+import { Form } from "./components/Form";
+import { Result } from "./components/Result";
+import { Error } from "./components/Error";
 
 const URLShortener: React.FC = () => {
-  const [originalUrl, setOriginalUrl] = useState("");
   const [shortenedUrl, setShortenedUrl] = useState("");
   const [error, setError] = useState("");
 
-  const handleFormSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleFormSubmit = async (originalUrl: string) => {
     try {
       const response = await shortenUrl(originalUrl);
       setShortenedUrl(response.result_url);
@@ -17,28 +18,17 @@ const URLShortener: React.FC = () => {
     }
   };
 
+  const handleCopy = () => {
+    navigator.clipboard.writeText(shortenedUrl);
+  };
+
   return (
     <section className="url-shortener">
-      <div>
-        <form onSubmit={handleFormSubmit}>
-          <input
-            type="text"
-            value={originalUrl}
-            onChange={(e) => setOriginalUrl(e.target.value)}
-            placeholder="Shorten a link here..."
-          />
-          <button type="submit">Shorten It!</button>
-        </form>
-        {shortenedUrl && (
-          <div>
-            <p>Shortened URL: {shortenedUrl}</p>
-            <button onClick={() => navigator.clipboard.writeText(shortenedUrl)}>
-              Copy
-            </button>
-          </div>
-        )}
-        {error && <p>{error}</p>}
-      </div>
+      <Form onSubmit={handleFormSubmit} />
+      {shortenedUrl && (
+        <Result shortenedUrl={shortenedUrl} onCopy={handleCopy} />
+      )}
+      {error && <Error error={error} />}
     </section>
   );
 };
