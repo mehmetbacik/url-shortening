@@ -1,8 +1,11 @@
 import React from "react";
+import { LogoImage } from "../../../../library/images/logo.svg";
 
 const Logo: React.FC = () => {
   return (
-    <h1 className="text-white text-2xl font-bold">URL Shortening</h1>
+    <div className="text-white text-2xl font-bold">
+      <img src={LogoImage} alt="Logo" />
+    </div>
   );
 };
 
