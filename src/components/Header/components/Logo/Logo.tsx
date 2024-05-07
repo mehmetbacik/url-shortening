@@ -1,5 +1,5 @@
 import React from "react";
-import { LogoImage } from "../../../../library/images/logo.svg";
+import LogoImage from "../../../../library/images/logo.svg";
 
 const Logo: React.FC = () => {
   return (
