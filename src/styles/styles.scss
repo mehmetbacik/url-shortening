@@ -2,4 +2,21 @@
 
 body {
     @include font;
+    .App {
+        .header {
+            nav {
+                ul {
+                    li {
+                        a {
+                            color: $grayish-violet;
+                            font-weight: bold;
+                            &:hover {
+                                color: $very-dark-blue;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

@@ -4,5 +4,12 @@ body {
   font-size: 18px;
   line-height: normal;
 }
+body .App .header nav ul li a {
+  color: hsl(257, 7%, 63%);
+  font-weight: bold;
+}
+body .App .header nav ul li a:hover {
+  color: hsl(255, 11%, 22%);
+}
 
 /*# sourceMappingURL=styles.css.map */
