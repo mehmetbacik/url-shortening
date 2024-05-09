@@ -4,12 +4,29 @@ body {
   font-size: 18px;
   line-height: normal;
 }
-body .App .header nav ul li a {
+body .App .header nav.navigation ul li a {
   color: hsl(257, 7%, 63%);
   font-weight: bold;
 }
-body .App .header nav ul li a:hover {
+body .App .header nav.navigation ul li a:hover {
   color: hsl(255, 11%, 22%);
+}
+body .App .header .user-actions .login {
+  color: hsl(257, 7%, 63%);
+  font-weight: bold;
+}
+body .App .header .user-actions .login:hover {
+  color: hsl(255, 11%, 22%);
+}
+body .App .header .user-actions .signup {
+  background-color: hsl(180, 66%, 49%);
+  color: hsl(0, 0%, 100%);
+  font-weight: bold;
+  border-radius: 50px;
+  transition: background-color 0.3s ease;
+}
+body .App .header .user-actions .signup:hover {
+  filter: brightness(95%);
 }
 
 /*# sourceMappingURL=styles.css.map */

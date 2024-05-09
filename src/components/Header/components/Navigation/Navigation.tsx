@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import MenuItem from "../../../../types/menuItem";
 import menuApi from "../../../../services/menu-api";
+import { UserActions } from "../UserActions";
 
 const Navigation: React.FC = () => {
   const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
@@ -35,7 +36,7 @@ const Navigation: React.FC = () => {
   };
 
   return (
-    <nav className="flex justify-between items-center">
+    <nav className="flex justify-between items-center navigation">
       <div className="flex items-center gap-8">
         <ul className="hidden md:flex items-center gap-8">
           {renderMenuItems(menuItems)}
@@ -61,7 +62,14 @@ const Navigation: React.FC = () => {
       </div>
       {isOpen && (
         <div className="md:hidden">
-          <ul className="flex flex-col gap-4">{renderMenuItems(menuItems)}</ul>
+          <div className="menu-area">
+            <ul className="flex flex-col gap-4">
+              {renderMenuItems(menuItems)}
+            </ul>
+          </div>
+          <div className="action-area">
+            <UserActions />
+          </div>
         </div>
       )}
     </nav>

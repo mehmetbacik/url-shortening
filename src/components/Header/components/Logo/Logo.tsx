@@ -3,7 +3,7 @@ import LogoImage from "../../../../library/images/logo.svg";
 
 const Logo: React.FC = () => {
   return (
-    <div className="text-white text-2xl font-bold">
+    <div className="logo">
       <img src={LogoImage} alt="Logo" />
     </div>
   );

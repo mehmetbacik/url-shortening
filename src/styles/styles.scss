@@ -5,15 +5,36 @@ body {
     .App {
         .header {
             nav {
-                ul {
-                    li {
-                        a {
-                            color: $grayish-violet;
-                            font-weight: bold;
-                            &:hover {
-                                color: $very-dark-blue;
+                &.navigation {
+                    ul {
+                        li {
+                            a {
+                                color: $grayish-violet;
+                                font-weight: bold;
+                                &:hover {
+                                    color: $very-dark-blue;
+                                }
                             }
                         }
+                    }
+                }
+            }
+            .user-actions {
+                .login {
+                    color: $grayish-violet;
+                    font-weight: bold;
+                    &:hover {
+                        color: $very-dark-blue;
+                    }
+                }
+                .signup {
+                    background-color: $cyan;
+                    color: $white;
+                    font-weight: bold;
+                    border-radius: 50px;
+                    transition: background-color 0.3s ease;
+                    &:hover {
+                        filter: brightness(95%);
                     }
                 }
             }
