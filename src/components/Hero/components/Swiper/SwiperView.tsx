@@ -1,19 +1,38 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import HeroItem from "../../../../types/heroItem";
+import getHeroItems from "../../../../services/heroApi";
+
 
 const SwiperView: React.FC = () => {
+  const [heroItems, setHeroItems] = useState<HeroItem[]>([]);
+
+  useEffect(() => {
+    const fetchHeroItems = async () => {
+      try {
+        const items = await getHeroItems();
+        setHeroItems(items);
+      } catch (error) {
+        console.error("Error fetching hero items:", error);
+      }
+    };
+
+    fetchHeroItems();
+  }, []);
+
   return (
     <Swiper className="mySwiper">
-      <SwiperSlide>Slide 1</SwiperSlide>
-      <SwiperSlide>Slide 2</SwiperSlide>
-      <SwiperSlide>Slide 3</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide>
-      <SwiperSlide>Slide 5</SwiperSlide>
-      <SwiperSlide>Slide 6</SwiperSlide>
-      <SwiperSlide>Slide 7</SwiperSlide>
-      <SwiperSlide>Slide 8</SwiperSlide>
-      <SwiperSlide>Slide 9</SwiperSlide>
+      {heroItems.map((item, index) => (
+        <SwiperSlide key={index}>
+          <div>
+            <h2>{item.title}</h2>
+            <p>{item.description}</p>
+            <img src={item.imagePath} alt={item.title} />
+            <button>{item.buttonContent}</button>
+          </div>
+        </SwiperSlide>
+      ))}
     </Swiper>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import MenuItem from "../../../../types/menuItem";
-import menuApi from "../../../../services/menu-api";
+import menuApi from "../../../../services/menuApi";
 import { UserActions } from "../UserActions";
 
 const Navigation: React.FC = () => {

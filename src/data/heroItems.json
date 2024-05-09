@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Welcome to our website",
+    "description": "Explore our amazing features and discover how we can help you!",
+    "imagePath": "#",
+    "buttonContent": "Get Started"
+  },
+  {
+    "title": "Boost your links today",
+    "description": "Start using our URL shortening service and take your links to the next level.",
+    "imagePath": "#",
+    "buttonContent": "Sign Up Now"
+  },
+  {
+    "title": "Maximize your reach",
+    "description": "With our powerful analytics, you can track every click and optimize your campaigns.",
+    "imagePath": "#",
+    "buttonContent": "Learn More"
+  }
+]
