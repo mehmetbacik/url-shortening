@@ -1,35 +1,44 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
-interface MenuItem {
-  title: string;
-  path: string;
-}
-
-const menuItems: MenuItem[] = [
-  { title: "Features", path: "/features" },
-  { title: "Pricing", path: "/pricing" },
-  { title: "Resources", path: "/resources" },
-];
+import MenuItem from "../../../../types/menuItem";
+import menuApi from "../../../../services/menu-api";
 
 const Navigation: React.FC = () => {
+  const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const fetchMenuItems = async () => {
+      try {
+        const items = await menuApi();
+        setMenuItems(items);
+      } catch (error) {
+        console.error("Error fetching menu items:", error);
+      }
+    };
+
+    fetchMenuItems();
+  }, []);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const renderMenuItems = (items: MenuItem[]) => {
+    return items.map((item) => (
+      <li key={item.title}>
+        <Link to={item.path} className="hover:cursor-pointer">
+          {item.title}
+        </Link>
+      </li>
+    ));
   };
 
   return (
     <nav className="flex justify-between items-center">
       <div className="flex items-center gap-8">
         <ul className="hidden md:flex items-center gap-8">
-          {menuItems.map((item) => (
-            <li key={item.title}>
-              <Link to={item.path} className="hover:cursor-pointer">
-                {item.title}
-              </Link>
-            </li>
-          ))}
+          {renderMenuItems(menuItems)}
         </ul>
       </div>
       <div className="md:hidden">
@@ -52,15 +61,7 @@ const Navigation: React.FC = () => {
       </div>
       {isOpen && (
         <div className="md:hidden">
-          <ul className="flex flex-col gap-4">
-            {menuItems.map((item) => (
-              <li key={item.title}>
-                <Link to={item.path} className="hover:cursor-pointer">
-                  {item.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <ul className="flex flex-col gap-4">{renderMenuItems(menuItems)}</ul>
         </div>
       )}
     </nav>
