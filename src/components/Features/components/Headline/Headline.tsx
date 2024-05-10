@@ -1,5 +1,5 @@
 import React from "react";
-import { FeatureItem } from "../FeatureItem";
+import { FeatureItem } from "../FeatureItem/";
 
 const FeaturesView: React.FC = () => {
   return (

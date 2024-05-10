@@ -4,7 +4,6 @@ import "swiper/css";
 import HeroItem from "../../../../types/heroItem";
 import getHeroItems from "../../../../services/heroApi";
 
-
 const SwiperView: React.FC = () => {
   const [heroItems, setHeroItems] = useState<HeroItem[]>([]);
 
@@ -25,11 +24,15 @@ const SwiperView: React.FC = () => {
     <Swiper className="mySwiper">
       {heroItems.map((item, index) => (
         <SwiperSlide key={index}>
-          <div>
-            <h2>{item.title}</h2>
-            <p>{item.description}</p>
-            <img src={item.imagePath} alt={item.title} />
-            <button>{item.buttonContent}</button>
+          <div className="flex items-center justify-between gap-8">
+            <div className="flex flex-col gap-4 items-start slide-content w-1/2">
+              <span>{item.title}</span>
+              <p>{item.description}</p>
+              <button className="px-6 py-3">{item.buttonContent}</button>
+            </div>
+            <div className="w-1/2">
+              <img src={item.imagePath} alt={item.title} />
+              </div>
           </div>
         </SwiperSlide>
       ))}

@@ -1,11 +1,12 @@
 import heroData from "../data/heroItems.json";
+import imagePath from "../library/images/illustration-working.svg";
 
 const getHeroItems = async () => {
   try {
     const heroItems = heroData.map((item) => ({
       title: item.title,
       description: item.description,
-      imagePath: item.imagePath,
+      imagePath: imagePath,
       buttonContent: item.buttonContent,
     }));
 

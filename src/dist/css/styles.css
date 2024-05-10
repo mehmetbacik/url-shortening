@@ -28,5 +28,30 @@ body .App .header .user-actions .signup {
 body .App .header .user-actions .signup:hover {
   filter: brightness(95%);
 }
+body .App .hero .mySwiper .swiper-slide .slide-content {
+  padding-right: 65px;
+}
+body .App .hero .mySwiper .swiper-slide .slide-content span {
+  font-size: 85px;
+  font-weight: bold;
+  line-height: 1.2;
+  text-align: start;
+  color: hsl(255, 11%, 22%);
+}
+body .App .hero .mySwiper .swiper-slide .slide-content p {
+  font-size: 25px;
+  text-align: start;
+  color: hsl(257, 7%, 63%);
+}
+body .App .hero .mySwiper .swiper-slide .slide-content button {
+  background-color: hsl(180, 66%, 49%);
+  color: hsl(0, 0%, 100%);
+  font-weight: bold;
+  border-radius: 50px;
+  transition: background-color 0.3s ease;
+}
+body .App .hero .mySwiper .swiper-slide .slide-content button:hover {
+  filter: brightness(95%);
+}
 
 /*# sourceMappingURL=styles.css.map */
