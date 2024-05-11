@@ -1,17 +1,20 @@
 import React from "react";
-import { FeatureItem } from "../FeatureItem/";
 
 const FeaturesView: React.FC = () => {
   return (
-    <>
-      <h2 className="text-3xl font-bold text-center mb-8">
-        Advanced Statistics
-      </h2>
-      <p>
-        Track how your links are performing across the web with our advanced
-        statistics dashboard.
-      </p>
-    </>
+    <div className="flex flex-col justify-center items-center headline">
+      <div className="mb-3">
+        <span>
+          Advanced Statistics
+        </span>
+      </div>
+      <div className="mb-12 w-1/3">
+        <p>
+          Track how your links are performing across the web with our advanced
+          statistics dashboard.
+        </p>
+      </div>
+    </div>
   );
 };
 

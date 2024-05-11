@@ -53,5 +53,14 @@ body .App .hero .mySwiper .swiper-slide .slide-content button {
 body .App .hero .mySwiper .swiper-slide .slide-content button:hover {
   filter: brightness(95%);
 }
+body .App .features .headline span {
+  font-size: 40px;
+  font-weight: bold;
+  color: hsl(255, 11%, 22%);
+}
+body .App .features .headline p {
+  color: hsl(257, 7%, 63%);
+  font-weight: 500;
+}
 
 /*# sourceMappingURL=styles.css.map */

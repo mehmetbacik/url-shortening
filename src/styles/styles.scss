@@ -70,5 +70,18 @@ body {
                 }
             }
         }
+        .features {
+            .headline {
+                span {
+                    font-size: 40px;
+                    font-weight: bold;
+                    color: $very-dark-blue;
+                }
+                p {
+                    color: $grayish-violet;
+                    font-weight: 500;
+                }
+            }
+        }
     }
 }
