@@ -3,13 +3,23 @@ import React from "react";
 interface FeatureItemProps {
   title: string;
   description: string;
+  image: string;
 }
 
-const FeatureItem: React.FC<FeatureItemProps> = ({ title, description }) => {
+const FeatureItem: React.FC<FeatureItemProps> = ({
+  title,
+  description,
+  image,
+}) => {
   return (
-    <div className="bg-white rounded-lg p-6 shadow-md">
-      <h3 className="text-xl font-semibold mb-4">{title}</h3>
-      <p className="text-gray-700">{description}</p>
+    <div className="bg-white rounded-lg p-10 shadow-md relative features-item">
+      <div className="image">
+        <img src={image} alt={title} className="mb-4" />
+      </div>
+      <div className="flex flex-col justify-center items-start gap-2 content">
+        <span>{title}</span>
+        <p>{description}</p>
+      </div>
     </div>
   );
 };

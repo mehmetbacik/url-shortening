@@ -62,5 +62,17 @@ body .App .features .headline p {
   color: hsl(257, 7%, 63%);
   font-weight: 500;
 }
+body .App .features .features-view .features-item:first-child {
+  transform: translateY(0px);
+}
+body .App .features .features-view .features-item:nth-child(2) {
+  transform: translateY(50px);
+}
+body .App .features .features-view .features-item:last-child {
+  transform: translateY(100px);
+}
+body .App .features .features-view .features-item .content p {
+  text-align: start;
+}
 
 /*# sourceMappingURL=styles.css.map */

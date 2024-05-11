@@ -82,6 +82,24 @@ body {
                     font-weight: 500;
                 }
             }
+            .features-view {
+                .features-item {
+                    &:first-child {
+                        transform: translateY(0px);
+                    }
+                    &:nth-child(2) {
+                        transform: translateY(50px);
+                    }
+                    &:last-child {
+                        transform: translateY(100px);
+                    }
+                    .content {
+                        p {
+                            text-align: start;
+                        }
+                    }
+                }
+            }
         }
     }
 }
