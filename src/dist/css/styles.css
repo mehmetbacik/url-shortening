@@ -71,6 +71,15 @@ body .App .features .features-view .features-item:nth-child(2) {
 body .App .features .features-view .features-item:last-child {
   transform: translateY(100px);
 }
+body .App .features .features-view .features-item .image {
+  position: absolute;
+  top: -42px;
+}
+body .App .features .features-view .features-item .image img {
+  background-color: hsl(257, 27%, 26%);
+  padding: 20px;
+  border-radius: 50%;
+}
 body .App .features .features-view .features-item .content p {
   text-align: start;
 }

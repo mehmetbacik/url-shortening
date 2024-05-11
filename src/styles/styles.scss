@@ -93,6 +93,15 @@ body {
                     &:last-child {
                         transform: translateY(100px);
                     }
+                    .image {
+                        position: absolute;
+                        top: -42px;
+                        img {
+                            background-color: $dark-violet;
+                            padding: 20px;
+                            border-radius: 50%;
+                        }
+                    }
                     .content {
                         p {
                             text-align: start;
