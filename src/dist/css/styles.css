@@ -53,6 +53,9 @@ body .App .hero .mySwiper .swiper-slide .slide-content button {
 body .App .hero .mySwiper .swiper-slide .slide-content button:hover {
   filter: brightness(95%);
 }
+body .App .features {
+  padding-bottom: 13rem;
+}
 body .App .features .headline span {
   font-size: 40px;
   font-weight: bold;
@@ -60,7 +63,11 @@ body .App .features .headline span {
 }
 body .App .features .headline p {
   color: hsl(257, 7%, 63%);
+  font-size: 20px;
   font-weight: 500;
+}
+body .App .features .features-view {
+  z-index: 1;
 }
 body .App .features .features-view .features-item:first-child {
   transform: translateY(0px);
@@ -80,8 +87,24 @@ body .App .features .features-view .features-item .image img {
   padding: 20px;
   border-radius: 50%;
 }
+body .App .features .features-view .features-item .content span {
+  font-size: 25px;
+  font-weight: bold;
+}
 body .App .features .features-view .features-item .content p {
   text-align: start;
+  font-size: 20px;
+  font-weight: 500;
+  color: hsl(257, 7%, 63%);
+}
+body .App .features .line {
+  position: absolute;
+  width: 100%;
+  height: 8px;
+  background-color: hsl(180, 66%, 49%);
+  left: 0;
+  z-index: 0;
+  margin-top: 60px;
 }
 
 /*# sourceMappingURL=styles.css.map */

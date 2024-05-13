@@ -16,7 +16,7 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
       <div className="image">
         <img src={image} alt={title} className="mb-4" />
       </div>
-      <div className="flex flex-col justify-center items-start gap-2 mt-9 content">
+      <div className="flex flex-col justify-center items-start gap-4 mt-9 content">
         <span>{title}</span>
         <p>{description}</p>
       </div>
