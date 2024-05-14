@@ -129,5 +129,8 @@ body .App footer .footer .get-started button {
 body .App footer .footer .get-started button:hover {
   filter: brightness(95%);
 }
+body .App footer .footer .footer-logo a img {
+  filter: brightness(0) invert(1);
+}
 
 /*# sourceMappingURL=styles.css.map */
