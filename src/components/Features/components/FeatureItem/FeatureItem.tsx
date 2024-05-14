@@ -14,7 +14,7 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
   return (
     <div className="bg-white rounded-lg p-10 shadow-md relative features-item">
       <div className="image">
-        <img src={image} alt={title} className="mb-4" />
+        <img src={image} alt={title} />
       </div>
       <div className="flex flex-col justify-center items-start gap-4 mt-9 content">
         <span>{title}</span>

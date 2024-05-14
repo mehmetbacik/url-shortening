@@ -81,11 +81,11 @@ body .App .features .features-view .features-item:last-child {
 body .App .features .features-view .features-item .image {
   position: absolute;
   top: -42px;
-}
-body .App .features .features-view .features-item .image img {
   background-color: hsl(257, 27%, 26%);
   padding: 20px;
   border-radius: 50%;
+  width: 80px;
+  height: 80px;
 }
 body .App .features .features-view .features-item .content span {
   font-size: 25px;
@@ -105,6 +105,29 @@ body .App .features .line {
   left: 0;
   z-index: 0;
   margin-top: 60px;
+}
+body .App footer .footer .get-started {
+  background-color: hsl(257, 27%, 26%);
+  background-image: url(/src/library/images/bg-shorten-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+body .App footer .footer .get-started span {
+  font-size: 42px;
+  color: hsl(0, 0%, 100%);
+  font-weight: bold;
+}
+body .App footer .footer .get-started button {
+  background-color: hsl(180, 66%, 49%);
+  color: hsl(0, 0%, 100%);
+  font-weight: bold;
+  border-radius: 50px;
+  transition: background-color 0.3s ease;
+  width: fit-content;
+}
+body .App footer .footer .get-started button:hover {
+  filter: brightness(95%);
 }
 
 /*# sourceMappingURL=styles.css.map */

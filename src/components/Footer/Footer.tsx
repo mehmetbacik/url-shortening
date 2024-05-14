@@ -6,8 +6,8 @@ import { SocialMedia } from "./components/SocialMedia";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="text-white py-8">
-      <div className="container mx-auto flex flex-col justify-between items-center">
+    <footer className="text-white">
+      <div className="flex flex-col justify-between items-center footer">
         <GetStarted />
         <div className="flex items-center w-full bg-gray-800">
           <div className="flex items-center w-full">
