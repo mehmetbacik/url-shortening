@@ -10,14 +10,20 @@ const Footer: React.FC = () => {
       <div className="flex flex-col justify-between items-center footer">
         <GetStarted />
         <div className="flex items-center w-full bg-gray-800">
-          <div className="flex items-center w-full">
-            <Logo />
-            <div className="flex gap-5">
-              <Navigation />
+          <div className="w-full">
+            <div className="container mx-auto">
+              <div className="flex items-center">
+                <div className="flex items-center py-10">
+                  <Logo />
+                  <div className="flex gap-5">
+                    <Navigation />
+                  </div>
+                </div>
+                <div>
+                  <SocialMedia />
+                </div>
+              </div>
             </div>
-          </div>
-          <div>
-            <SocialMedia />
           </div>
         </div>
       </div>
