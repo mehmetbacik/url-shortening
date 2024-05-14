@@ -129,7 +129,10 @@ body .App footer .footer .get-started button {
 body .App footer .footer .get-started button:hover {
   filter: brightness(95%);
 }
-body .App footer .footer .footer-logo a img {
+body .App footer .footer .footer-content {
+  background-color: hsl(260, 8%, 14%);
+}
+body .App footer .footer .footer-content .footer-logo a img {
   filter: brightness(0) invert(1);
 }
 

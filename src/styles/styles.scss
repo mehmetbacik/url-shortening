@@ -154,10 +154,13 @@ body {
                         }
                     }
                 }
-                .footer-logo {
-                    a {
-                        img {
-                            filter: brightness(0) invert(1);
+                .footer-content {
+                    background-color: $very-dark-violet;
+                    .footer-logo {
+                        a {
+                            img {
+                                filter: brightness(0) invert(1);
+                            }
                         }
                     }
                 }

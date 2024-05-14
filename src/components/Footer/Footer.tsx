@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
     <footer className="text-white">
       <div className="flex flex-col justify-between items-center footer">
         <GetStarted />
-        <div className="flex items-center w-full bg-gray-800">
+        <div className="flex items-center w-full footer-content">
           <div className="w-full">
             <div className="container mx-auto">
               <div className="flex items-center">

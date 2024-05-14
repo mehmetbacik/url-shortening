@@ -1,18 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import FacebookLogo from "../../../../../../library/images/icon-facebook.svg";
+import TwitterLogo from "../../../../../../library/images/icon-twitter.svg";
+import PinterestLogo from "../../../../../../library/images/icon-pinterest.svg";
+import InstagramLogo from "../../../../../../library/images/icon-instagram.svg";
 
 const SocialMediaOptions: React.FC = () => {
   return (
     <>
-      <div className="flex">
+      <div className="flex items-center gap-6">
         <Link to="#" className="text-gray-300 hover:text-white">
-          Facebook
+          <img src={FacebookLogo} alt="Facebook" />
         </Link>
         <Link to="#" className="text-gray-300 hover:text-white">
-          Twitter
+          <img src={TwitterLogo} alt="Twitter" />
         </Link>
         <Link to="#" className="text-gray-300 hover:text-white">
-          Instagram
+          <img src={PinterestLogo} alt="Pinterest" />
+        </Link>
+        <Link to="#" className="text-gray-300 hover:text-white">
+          <img src={InstagramLogo} alt="Instagram" />
         </Link>
       </div>
     </>
