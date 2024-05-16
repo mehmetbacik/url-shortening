@@ -23,7 +23,7 @@ const URLShortener: React.FC = () => {
   };
 
   return (
-    <section className="url-shortener">
+    <section className="url-shortener animate-slideUp">
       <Form onSubmit={handleFormSubmit} />
       {shortenedUrl && (
         <Result shortenedUrl={shortenedUrl} onCopy={handleCopy} />

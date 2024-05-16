@@ -6,7 +6,7 @@ import { SocialMedia } from "./components/SocialMedia";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="text-white">
+    <footer className="text-white animate-slideUp">
       <div className="flex flex-col justify-between items-center footer">
         <GetStarted />
         <div className="flex items-center w-full footer-content">
