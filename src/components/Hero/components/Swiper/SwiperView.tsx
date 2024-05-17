@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import HeroItem from "../../../../types/heroItem";
-import getHeroItems from "../../../../services/heroApi";
+import getHeroItems from "../../../../services/heroService";
 
 const SwiperView: React.FC = () => {
   const [heroItems, setHeroItems] = useState<HeroItem[]>([]);
