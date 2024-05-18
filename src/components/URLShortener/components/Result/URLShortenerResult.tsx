@@ -4,8 +4,15 @@ import URLShortenerContext from "../../context/URLShortenerContext";
 const URLShortenerResult: React.FC = () => {
   const { shortenedUrl } = useContext(URLShortenerContext);
 
-  const handleCopy = () => {
-    // Implement copy functionality here
+  const handleCopy = async () => {
+    if (shortenedUrl) {
+      try {
+        await navigator.clipboard.writeText(shortenedUrl);
+        alert("URL copied to clipboard!");
+      } catch (err) {
+        alert("Failed to copy URL.");
+      }
+    }
   };
 
   return (

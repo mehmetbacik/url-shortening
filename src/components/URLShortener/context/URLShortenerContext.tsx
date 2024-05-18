@@ -42,15 +42,31 @@ export const URLShortenerProvider: React.FC<{ children: React.ReactNode }> = ({
           },
         }
       );
+      console.log("API Response:", response.data);
       setShortenedUrl(response.data.link);
       setError("");
-    } catch (error) {
-      setError("Failed to shorten URL. Please try again.");
+    } catch (error: any) {
+      console.error(
+        "Error response:",
+        error.response ? error.response.data : error.message
+      );
+      if (error.response) {
+        setError(
+          error.response.data.message ||
+            "Failed to shorten URL. Please try again."
+        );
+      } else {
+        setError("Failed to shorten URL. Please try again.");
+      }
       setShortenedUrl("");
     }
   };
 
   const handleShorten = () => {
+    if (!currentLink.trim()) {
+      setError("Please enter a valid URL.");
+      return;
+    }
     shortenUrl();
   };
 
