@@ -1,6 +1,13 @@
 import React, { createContext, useContext, useState } from "react";
 import axios from "axios";
 
+const ACCESS_TOKEN = "360b2e61ff2364d385f1973ab3b2488d79eed72d";
+const BITLY_SHORTEN_ENDPOINT = "https://api-ssl.bitly.com/v4/shorten";
+const headers = {
+  Authorization: `Bearer ${ACCESS_TOKEN}`,
+  "Content-Type": "application/json",
+};
+
 interface URLShortenerContextProps {
   currentLink: string;
   shortenedUrl: string;
@@ -31,15 +38,14 @@ export const URLShortenerProvider: React.FC<{ children: React.ReactNode }> = ({
   const shortenUrl = async () => {
     try {
       const response = await axios.post(
-        "https://api-ssl.bitly.com/v4/shorten",
+        BITLY_SHORTEN_ENDPOINT,
         {
           long_url: currentLink,
+          domain: "bit.ly",
+          group_guid: "Ba1bc23dE4F",
         },
         {
-          headers: {
-            Authorization: `Bearer 360b2e61ff2364d385f1973ab3b2488d79eed72d`,
-            "Content-Type": "application/json",
-          },
+          headers: headers,
         }
       );
       console.log("API Response:", response.data);
