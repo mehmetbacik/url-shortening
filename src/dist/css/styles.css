@@ -53,8 +53,31 @@ body .App .hero .mySwiper .swiper-slide .slide-content button {
 body .App .hero .mySwiper .swiper-slide .slide-content button:hover {
   filter: brightness(95%);
 }
+body .App .url-shortener .url-shortener-content {
+  background-color: hsl(257, 27%, 26%);
+  background-image: url(/src/library/images/bg-shorten-desktop.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transform: translateY(75px);
+  position: relative;
+  z-index: 1;
+}
+body .App .url-shortener .url-shortener-content form input[type=text] {
+  width: 100%;
+  padding: 12px 25px;
+  display: inline-block;
+  box-sizing: border-box;
+}
+body .App .url-shortener .url-shortener-content form button[type=submit] {
+  background-color: hsl(180, 66%, 49%);
+  color: hsl(0, 0%, 100%);
+  min-width: 140px;
+  padding: 12px 20px;
+}
 body .App .features {
-  padding-bottom: 13rem;
+  padding-top: 200px;
+  padding-bottom: 210px;
 }
 body .App .features .headline span {
   font-size: 40px;

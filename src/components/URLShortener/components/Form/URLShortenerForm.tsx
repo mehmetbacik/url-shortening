@@ -18,14 +18,16 @@ const URLShortenerForm: React.FC = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleFormSubmit}>
+    <div className="container mx-auto url-shortener-content rounded-lg">
+      <form onSubmit={handleFormSubmit} className="flex items-center gap-3 py-[50px] px-[55px]">
         <input
           type="text"
+          className="w-full rounded-lg"
           value={originalUrl}
+          placeholder="Shorten a link here..."
           onChange={(e) => setOriginalUrl(e.target.value)}
         />
-        <button type="submit">Shorten</button>
+        <button className="rounded-lg" type="submit">Shorten It!</button>
       </form>
       {error && <p>{error}</p>}
     </div>
