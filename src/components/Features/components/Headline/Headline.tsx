@@ -2,7 +2,7 @@ import React from "react";
 
 const FeaturesView: React.FC = () => {
   return (
-    <div className="flex flex-col justify-center items-center headline">
+    <div className="flex flex-col justify-center items-center animate-slideUp headline">
       <div className="mb-3">
         <span>
           Advanced Statistics

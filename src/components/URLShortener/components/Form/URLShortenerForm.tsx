@@ -8,6 +8,10 @@ const URLShortenerForm: React.FC = () => {
 
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!originalUrl.trim()) {
+      setError("Please enter a valid URL.");
+      return;
+    }
     try {
       await handleShorten();
       setOriginalUrl("");
@@ -19,17 +23,24 @@ const URLShortenerForm: React.FC = () => {
 
   return (
     <div className="container mx-auto url-shortener-content rounded-lg">
-      <form onSubmit={handleFormSubmit} className="flex items-center gap-3 py-[50px] px-[55px]">
-        <input
-          type="text"
-          className="w-full rounded-lg"
-          value={originalUrl}
-          placeholder="Shorten a link here..."
-          onChange={(e) => setOriginalUrl(e.target.value)}
-        />
-        <button className="rounded-lg" type="submit">Shorten It!</button>
-      </form>
-      {error && <p>{error}</p>}
+      <div className="py-[50px] px-[55px]">
+        <form onSubmit={handleFormSubmit} className="flex items-center gap-3">
+          <input
+            type="text"
+            className={`w-full rounded-lg p-2 ${error ? "border-red-500" : ""}`}
+            value={originalUrl}
+            placeholder="Shorten a link here..."
+            onChange={(e) => setOriginalUrl(e.target.value)}
+          />
+          <button
+            type="submit"
+            className="bg-blue-500 text-white px-4 py-2 rounded"
+          >
+            Shorten It!
+          </button>
+        </form>
+        {error && <p className="text-red-500 text-start mt-1 italic text-[12px]">{error}</p>}
+      </div>
     </div>
   );
 };

@@ -6,7 +6,7 @@ import FullyImage from "../../../../library/images/icon-fully-customizable.svg"
 
 const FeaturesView: React.FC = () => {
   return (
-    <div className="relative flex items-center">
+    <div className="relative flex items-center animate-slideUp">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12 features-view">
         <FeatureItem
           title="Brand Recognition"

@@ -7,7 +7,7 @@ import { URLShortenerError } from "./components/Error";
 const URLShortener: React.FC = () => {
   return (
     <URLShortenerProvider>
-      <div className="url-shortener animate-slideUp">
+      <div className="url-shortener">
         <URLShortenerForm />
         <URLShortenerResult />
         <URLShortenerError />
