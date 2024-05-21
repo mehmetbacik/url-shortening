@@ -23,8 +23,8 @@ const URLShortenerForm: React.FC = () => {
 
   return (
     <div className="container mx-auto url-shortener-content rounded-lg">
-      <div className="py-[50px] px-[55px]">
-        <form onSubmit={handleFormSubmit} className="flex items-center gap-3">
+      <div className="py-[50px] px-[55px] relative">
+        <form onSubmit={handleFormSubmit} className="flex items-center gap-4">
           <input
             type="text"
             className={`w-full rounded-lg p-2 ${error ? "border-red-500" : ""}`}
@@ -34,12 +34,16 @@ const URLShortenerForm: React.FC = () => {
           />
           <button
             type="submit"
-            className="bg-blue-500 text-white px-4 py-2 rounded"
+            className="bg-blue-500 text-white px-4 py-2 rounded-lg"
           >
             Shorten It!
           </button>
         </form>
-        {error && <p className="text-red-500 text-start mt-1 italic text-[12px]">{error}</p>}
+        {error && (
+          <p className="text-red-500 text-start mt-1 italic text-[12px] absolute">
+            {error}
+          </p>
+        )}
       </div>
     </div>
   );
