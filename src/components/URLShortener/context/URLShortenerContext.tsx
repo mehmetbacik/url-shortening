@@ -35,7 +35,7 @@ export const URLShortenerProvider: React.FC<{ children: React.ReactNode }> = ({
   const [shortenedUrl, setShortenedUrl] = useState<string>("");
   const [error, setError] = useState<string>("");
 
-  const shortenUrl = async () => {
+  const handleShorten = async () => {
     try {
       const response = await axios.post(
         BITLY_SHORTEN_ENDPOINT,
@@ -66,14 +66,6 @@ export const URLShortenerProvider: React.FC<{ children: React.ReactNode }> = ({
       }
       setShortenedUrl("");
     }
-  };
-
-  const handleShorten = () => {
-    if (!currentLink.trim()) {
-      setError("Please enter a valid URL.");
-      return;
-    }
-    shortenUrl();
   };
 
   const updateCurrentLink = (value: string) => {

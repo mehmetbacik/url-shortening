@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import URLShortenerContext from "../../context/URLShortenerContext";
 
 const URLShortenerResult: React.FC = () => {
