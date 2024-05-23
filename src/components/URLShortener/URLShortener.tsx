@@ -1,6 +1,6 @@
 import React from "react";
 import { URLShortenerProvider } from "./context/URLShortenerContext";
-import { URLShortenerForm } from "./components/Form";
+import { URLShortenerFormView } from "./components/Form";
 import { URLShortenerResult } from "./components/Result";
 import { URLShortenerError } from "./components/Error";
 
@@ -8,7 +8,7 @@ const URLShortener: React.FC = () => {
   return (
     <URLShortenerProvider>
       <div className="url-shortener">
-        <URLShortenerForm />
+        <URLShortenerFormView />
         <URLShortenerResult />
         <URLShortenerError />
       </div>

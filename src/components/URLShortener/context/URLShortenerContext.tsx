@@ -1,12 +1,7 @@
 import React, { createContext, useContext, useState } from "react";
 import axios from "axios";
 
-const ACCESS_TOKEN = "360b2e61ff2364d385f1973ab3b2488d79eed72d";
-const BITLY_SHORTEN_ENDPOINT = "https://api-ssl.bitly.com/v4/shorten";
-const headers = {
-  Authorization: `Bearer ${ACCESS_TOKEN}`,
-  "Content-Type": "application/json",
-};
+const ISGD_API_URL = "https://is.gd/create.php";
 
 interface URLShortenerContextProps {
   currentLink: string;
@@ -37,37 +32,24 @@ export const URLShortenerProvider: React.FC<{ children: React.ReactNode }> = ({
 
   const handleShorten = async () => {
     try {
-      const response = await axios.post(
-        BITLY_SHORTEN_ENDPOINT,
-        {
-          long_url: currentLink,
-          domain: "bit.ly",
-          group_guid: "Ba1bc23dE4F",
+      const response = await axios.get(ISGD_API_URL, {
+        params: {
+          format: "json",
+          url: currentLink,
         },
-        {
-          headers: headers,
-        }
-      );
+      });
       console.log("API Response:", response.data);
-      setShortenedUrl(response.data.link);
-      setError("");
-    } catch (error: any) {
-      console.error(
-        "Error response:",
-        error.response ? error.response.data : error.message
-      );
-      if (error.response) {
-        setError(
-          error.response.data.message ||
-            "Failed to shorten URL. Please try again."
-        );
+      if (response.data.shorturl) {
+        setShortenedUrl(response.data.shorturl);
+        setError("");
       } else {
         setError("Failed to shorten URL. Please try again.");
       }
-      setShortenedUrl("");
+    } catch (error: any) {
+      console.error("Error response:", error);
+      setError("Failed to shorten URL. Please try again.");
     }
   };
-
   const updateCurrentLink = (value: string) => {
     setCurrentLink(value);
   };

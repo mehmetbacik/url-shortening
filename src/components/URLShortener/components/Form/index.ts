@@ -1,1 +1,1 @@
-export { default as URLShortenerForm } from "./URLShortenerForm";
+export { default as URLShortenerFormView } from "./URLShortenerForm";

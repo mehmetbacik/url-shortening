@@ -1,8 +1,9 @@
 import React, { useContext, useState } from "react";
 import URLShortenerContext from "../../context/URLShortenerContext";
 
-const URLShortenerForm: React.FC = () => {
-  const { handleShorten, error } = useContext(URLShortenerContext);
+const URLShortenerFormView: React.FC = () => {
+  const { handleShorten, updateCurrentLink, error } =
+    useContext(URLShortenerContext);
   const [originalUrl, setOriginalUrl] = useState<string>("");
   const [formError, setFormError] = useState<string>("");
 
@@ -13,6 +14,7 @@ const URLShortenerForm: React.FC = () => {
       return;
     }
     try {
+      updateCurrentLink(originalUrl);
       await handleShorten();
       setOriginalUrl("");
       setFormError("");
@@ -20,7 +22,7 @@ const URLShortenerForm: React.FC = () => {
       setFormError("Failed to shorten URL. Please try again.");
     }
   };
-  
+
   return (
     <div className="container mx-auto url-shortener-content rounded-lg">
       <div className="py-[50px] px-[55px] relative">
@@ -51,4 +53,4 @@ const URLShortenerForm: React.FC = () => {
   );
 };
 
-export default URLShortenerForm;
+export default URLShortenerFormView;
