@@ -2,7 +2,7 @@ import { useContext } from "react";
 import URLShortenerContext from "../../context/URLShortenerContext";
 
 const URLShortenerResult: React.FC = () => {
-  const { shortenedUrl } = useContext(URLShortenerContext);
+  const { currentLink, shortenedUrl } = useContext(URLShortenerContext);
 
   const handleCopy = async () => {
     if (shortenedUrl) {
@@ -16,11 +16,16 @@ const URLShortenerResult: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="container mx-auto url-shortener-result">
       {shortenedUrl && (
-        <div>
-          <p>Shortened URL: {shortenedUrl}</p>
-          <button onClick={handleCopy}>Copy</button>
+        <div className="url-shortener-result-content">
+          <div className="current">
+            <span>{currentLink}</span>
+          </div>
+          <div className="result">
+            <span>{shortenedUrl}</span>
+            <button onClick={handleCopy}>Copy</button>
+          </div>
         </div>
       )}
     </div>

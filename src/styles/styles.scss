@@ -71,15 +71,15 @@ body {
             }
         }
         .url-shortener {
+            transform: translateY(75px);
+            position: relative;
+            z-index: 1;
             .url-shortener-content {
                 background-color: $dark-violet;
                 background-image:  url(/src/library/images/bg-shorten-desktop.svg);
                 background-repeat: no-repeat;
                 background-position: center;
                 background-size: cover;
-                transform: translateY(75px);
-                position: relative;
-                z-index: 1;
                 form {
                     input[type=text] {
                         width: 100%;
@@ -93,6 +93,18 @@ body {
                         min-width: 140px;
                         padding: 12px 20px;
                     }
+                }
+            }
+            .url-shortener-result {
+                margin-top: 20px;
+                .url-shortener-result-content {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 5px;
+                    background-color: $white;
+                    padding: 15px 20px;
+                    border-radius: 0.5rem;
                 }
             }
         }
