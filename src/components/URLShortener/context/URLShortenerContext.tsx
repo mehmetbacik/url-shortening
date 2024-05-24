@@ -42,6 +42,16 @@ export const URLShortenerProvider: React.FC<{ children: React.ReactNode }> = ({
       if (response.data.shorturl) {
         setShortenedUrl(response.data.shorturl);
         setError("");
+        const storedUrlsString = localStorage.getItem("shortenedUrls");
+        let storedUrls = [];
+        if (storedUrlsString) {
+          storedUrls = JSON.parse(storedUrlsString);
+        }
+        storedUrls.unshift({
+          longUrl: currentLink,
+          shortUrl: response.data.shorturl,
+        });
+        localStorage.setItem("shortenedUrls", JSON.stringify(storedUrls));
       } else {
         setError("Failed to shorten URL. Please try again.");
       }
@@ -50,6 +60,7 @@ export const URLShortenerProvider: React.FC<{ children: React.ReactNode }> = ({
       setError("Failed to shorten URL. Please try again.");
     }
   };
+
   const updateCurrentLink = (value: string) => {
     setCurrentLink(value);
   };
