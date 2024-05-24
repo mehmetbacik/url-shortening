@@ -1,17 +1,25 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import URLShortenerContext from "../../context/URLShortenerContext";
 
 const URLShortenerResult: React.FC = () => {
   const { currentLink, shortenedUrl } = useContext(URLShortenerContext);
+  const [storedShortenedUrls, setStoredShortenedUrls] = useState<
+    ShortenedUrl[]
+  >([]);
 
-  const handleCopy = async () => {
-    if (shortenedUrl) {
-      try {
-        await navigator.clipboard.writeText(shortenedUrl);
-        alert("URL copied to clipboard!");
-      } catch (err) {
-        alert("Failed to copy URL.");
-      }
+  useEffect(() => {
+    const storedUrls = localStorage.getItem("shortenedUrls");
+    if (storedUrls) {
+      setStoredShortenedUrls(JSON.parse(storedUrls));
+    }
+  }, []);
+
+  const handleCopy = async (url: string) => {
+    try {
+      await navigator.clipboard.writeText(url);
+      alert("URL copied to clipboard!");
+    } catch (err) {
+      alert("Failed to copy URL.");
     }
   };
 
@@ -24,8 +32,22 @@ const URLShortenerResult: React.FC = () => {
           </div>
           <div className="result">
             <span>{shortenedUrl}</span>
-            <button onClick={handleCopy}>Copy</button>
+            <button onClick={() => handleCopy(shortenedUrl)}>Copy</button>
           </div>
+        </div>
+      )}
+
+      {storedShortenedUrls.length > 0 && (
+        <div className="stored-shortened-urls">
+          <h2>Previously Shortened URLs</h2>
+          <ul>
+            {storedShortenedUrls.map((url, index) => (
+              <li key={index}>
+                <span>{url.longUrl}</span> - <span>{url.shortUrl}</span>
+                <button onClick={() => handleCopy(url.shortUrl)}>Copy</button>
+              </li>
+            ))}
+          </ul>
         </div>
       )}
     </div>
