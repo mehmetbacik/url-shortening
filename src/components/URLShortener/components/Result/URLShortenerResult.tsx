@@ -1,4 +1,6 @@
-import { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import URLShortenerContext from "../../context/URLShortenerContext";
 
 const URLShortenerResult: React.FC = () => {
@@ -17,15 +19,16 @@ const URLShortenerResult: React.FC = () => {
   const handleCopy = async (url: string) => {
     try {
       await navigator.clipboard.writeText(url);
-      alert("URL copied to clipboard!");
+      toast.success("URL copied to clipboard!");
     } catch (err) {
-      alert("Failed to copy URL.");
+      toast.error("Failed to copy URL.");
     }
   };
 
   return (
     <div className="container mx-auto url-shortener-result">
-      {shortenedUrl && (
+      <ToastContainer />
+      {/*{shortenedUrl && (
         <div className="url-shortener-result-content">
           <div className="current">
             <span>{currentLink}</span>
@@ -35,19 +38,21 @@ const URLShortenerResult: React.FC = () => {
             <button onClick={() => handleCopy(shortenedUrl)}>Copy</button>
           </div>
         </div>
-      )}
+      )}*/}
 
       {storedShortenedUrls.length > 0 && (
-        <div className="stored-shortened-urls">
-          <h2>Previously Shortened URLs</h2>
-          <ul>
-            {storedShortenedUrls.map((url, index) => (
-              <li key={index}>
-                <span>{url.longUrl}</span> - <span>{url.shortUrl}</span>
+        <div className="shortened-urls">
+          {storedShortenedUrls.slice(0, 3).map((url, index) => (
+            <div className="url-shortener-result-content" key={index}>
+              <div className="current">
+                <span>{url.longUrl}</span>
+              </div>
+              <div className="result">
+                <span>{url.shortUrl}</span>
                 <button onClick={() => handleCopy(url.shortUrl)}>Copy</button>
-              </li>
-            ))}
-          </ul>
+              </div>
+            </div>
+          ))}
         </div>
       )}
     </div>

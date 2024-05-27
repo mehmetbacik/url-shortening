@@ -97,14 +97,44 @@ body {
             }
             .url-shortener-result {
                 margin-top: 20px;
-                .url-shortener-result-content {
+                .shortened-urls {
                     display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    gap: 5px;
-                    background-color: $white;
-                    padding: 15px 20px;
-                    border-radius: 0.5rem;
+                    flex-direction: column;
+                    gap: 10px;
+                    .url-shortener-result-content {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        gap: 5px;
+                        background-color: $white;
+                        padding: 15px 20px;
+                        border-radius: 0.5rem;
+                        .current {
+                            span {
+                                font-weight: 600;
+                                color: $very-dark-blue;
+                            }
+                        }
+                        .result {
+                            display: flex;
+                            gap: 20px;
+                            align-items: center;
+                            span {
+                                font-weight: 600;
+                                color: $cyan;
+                            }
+                            button {
+                                background-color: $cyan;
+                                color: $white;
+                                border-radius: 5px;
+                                padding: 10px 30px;
+                                font-weight: bold;
+                                &:hover {
+                                    background-color: $dark-violet;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

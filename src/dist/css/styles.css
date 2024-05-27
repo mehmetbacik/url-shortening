@@ -80,7 +80,12 @@ body .App .url-shortener .url-shortener-content form button[type=submit] {
 body .App .url-shortener .url-shortener-result {
   margin-top: 20px;
 }
-body .App .url-shortener .url-shortener-result .url-shortener-result-content {
+body .App .url-shortener .url-shortener-result .shortened-urls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+body .App .url-shortener .url-shortener-result .shortened-urls .url-shortener-result-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -88,6 +93,29 @@ body .App .url-shortener .url-shortener-result .url-shortener-result-content {
   background-color: hsl(0, 0%, 100%);
   padding: 15px 20px;
   border-radius: 0.5rem;
+}
+body .App .url-shortener .url-shortener-result .shortened-urls .url-shortener-result-content .current span {
+  font-weight: 600;
+  color: hsl(255, 11%, 22%);
+}
+body .App .url-shortener .url-shortener-result .shortened-urls .url-shortener-result-content .result {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+body .App .url-shortener .url-shortener-result .shortened-urls .url-shortener-result-content .result span {
+  font-weight: 600;
+  color: hsl(180, 66%, 49%);
+}
+body .App .url-shortener .url-shortener-result .shortened-urls .url-shortener-result-content .result button {
+  background-color: hsl(180, 66%, 49%);
+  color: hsl(0, 0%, 100%);
+  border-radius: 5px;
+  padding: 10px 30px;
+  font-weight: bold;
+}
+body .App .url-shortener .url-shortener-result .shortened-urls .url-shortener-result-content .result button:hover {
+  background-color: hsl(257, 27%, 26%);
 }
 body .App .features {
   padding-top: 200px;
