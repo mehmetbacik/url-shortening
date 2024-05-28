@@ -127,7 +127,8 @@ body {
                                 background-color: $cyan;
                                 color: $white;
                                 border-radius: 5px;
-                                padding: 10px 30px;
+                                width: 135px;
+                                height: 50px;
                                 font-weight: bold;
                                 &:hover {
                                     background-color: $dark-violet;
@@ -229,6 +230,42 @@ body {
                         a {
                             img {
                                 filter: brightness(0) invert(1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 475px) {
+    body {
+        .App {
+            .hero {
+                padding-left: 10px;
+                padding-right: 10px;
+                .mySwiper {
+                    .swiper-slide {
+                        .slide-content {
+                            padding-right: 0px;
+                            span {
+                                font-size: 30px;
+                                text-align: center;
+                            }
+                            p {
+                                font-size: 15px;
+                                text-align: center;
+                            }
+                            button {
+                                background-color: $cyan;
+                                color: $white;
+                                font-weight: bold;
+                                border-radius: 50px;
+                                transition: background-color 0.3s ease;
+                                &:hover {
+                                    filter: brightness(95%);
+                                }
                             }
                         }
                     }

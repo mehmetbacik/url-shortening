@@ -24,13 +24,13 @@ const SwiperView: React.FC = () => {
     <Swiper className="mySwiper">
       {heroItems.map((item, index) => (
         <SwiperSlide key={index}>
-          <div className="flex items-center justify-between gap-8">
-            <div className="flex flex-col gap-4 items-start slide-content w-1/2">
+          <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-8">
+            <div className="flex flex-col gap-4 items-center md:items-start slide-content w-full md:w-1/2">
               <span>{item.title}</span>
               <p>{item.description}</p>
               <button className="px-6 py-3">{item.buttonContent}</button>
             </div>
-            <div className="w-1/2">
+            <div className="w-full md:w-1/2">
               <img src={item.imagePath} alt={item.title} />
               </div>
           </div>

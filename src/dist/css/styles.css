@@ -111,7 +111,8 @@ body .App .url-shortener .url-shortener-result .shortened-urls .url-shortener-re
   background-color: hsl(180, 66%, 49%);
   color: hsl(0, 0%, 100%);
   border-radius: 5px;
-  padding: 10px 30px;
+  width: 135px;
+  height: 50px;
   font-weight: bold;
 }
 body .App .url-shortener .url-shortener-result .shortened-urls .url-shortener-result-content .result button:hover {
@@ -199,6 +200,34 @@ body .App footer .footer .footer-content {
 }
 body .App footer .footer .footer-content .footer-logo a img {
   filter: brightness(0) invert(1);
+}
+
+@media (max-width: 475px) {
+  body .App .hero {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  body .App .hero .mySwiper .swiper-slide .slide-content {
+    padding-right: 0px;
+  }
+  body .App .hero .mySwiper .swiper-slide .slide-content span {
+    font-size: 30px;
+    text-align: center;
+  }
+  body .App .hero .mySwiper .swiper-slide .slide-content p {
+    font-size: 15px;
+    text-align: center;
+  }
+  body .App .hero .mySwiper .swiper-slide .slide-content button {
+    background-color: hsl(180, 66%, 49%);
+    color: hsl(0, 0%, 100%);
+    font-weight: bold;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+  }
+  body .App .hero .mySwiper .swiper-slide .slide-content button:hover {
+    filter: brightness(95%);
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
