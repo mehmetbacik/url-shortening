@@ -1,12 +1,18 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
 import axios from "axios";
 
 const ISGD_API_URL = "https://is.gd/create.php";
+
+interface ShortenedUrl {
+  longUrl: string;
+  shortUrl: string;
+}
 
 interface URLShortenerContextProps {
   currentLink: string;
   shortenedUrl: string;
   error: string;
+  storedShortenedUrls: ShortenedUrl[];
   handleShorten: () => void;
   updateCurrentLink: (value: string) => void;
 }
@@ -15,6 +21,7 @@ const URLShortenerContext = createContext<URLShortenerContextProps>({
   currentLink: "",
   shortenedUrl: "",
   error: "",
+  storedShortenedUrls: [],
   handleShorten: () => {},
   updateCurrentLink: (value: string) => {},
 });
@@ -29,6 +36,16 @@ export const URLShortenerProvider: React.FC<{ children: React.ReactNode }> = ({
   const [currentLink, setCurrentLink] = useState<string>("");
   const [shortenedUrl, setShortenedUrl] = useState<string>("");
   const [error, setError] = useState<string>("");
+  const [storedShortenedUrls, setStoredShortenedUrls] = useState<
+    ShortenedUrl[]
+  >([]);
+
+  useEffect(() => {
+    const storedUrls = localStorage.getItem("shortenedUrls");
+    if (storedUrls) {
+      setStoredShortenedUrls(JSON.parse(storedUrls));
+    }
+  }, []);
 
   const handleShorten = async () => {
     try {
@@ -38,25 +55,26 @@ export const URLShortenerProvider: React.FC<{ children: React.ReactNode }> = ({
           url: currentLink,
         },
       });
-      console.log("API Response:", response.data);
       if (response.data.shorturl) {
-        setShortenedUrl(response.data.shorturl);
-        setError("");
-        const storedUrlsString = localStorage.getItem("shortenedUrls");
-        let storedUrls = [];
-        if (storedUrlsString) {
-          storedUrls = JSON.parse(storedUrlsString);
-        }
-        storedUrls.unshift({
+        const newShortenedUrl = {
           longUrl: currentLink,
           shortUrl: response.data.shorturl,
-        });
-        localStorage.setItem("shortenedUrls", JSON.stringify(storedUrls));
+        };
+
+        setShortenedUrl(response.data.shorturl);
+        setError("");
+
+        const updatedStoredUrls = [newShortenedUrl, ...storedShortenedUrls];
+        setStoredShortenedUrls(updatedStoredUrls);
+
+        localStorage.setItem(
+          "shortenedUrls",
+          JSON.stringify(updatedStoredUrls)
+        );
       } else {
         setError("Failed to shorten URL. Please try again.");
       }
     } catch (error: any) {
-      console.error("Error response:", error);
       setError("Failed to shorten URL. Please try again.");
     }
   };
@@ -71,6 +89,7 @@ export const URLShortenerProvider: React.FC<{ children: React.ReactNode }> = ({
         currentLink,
         shortenedUrl,
         error,
+        storedShortenedUrls,
         handleShorten,
         updateCurrentLink,
       }}

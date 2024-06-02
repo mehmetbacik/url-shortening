@@ -1,21 +1,11 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import URLShortenerContext from "../../context/URLShortenerContext";
 
 const URLShortenerResult: React.FC = () => {
-  const { currentLink, shortenedUrl } = useContext(URLShortenerContext);
-  const [storedShortenedUrls, setStoredShortenedUrls] = useState<
-    ShortenedUrl[]
-  >([]);
+  const { storedShortenedUrls } = useContext(URLShortenerContext);
   const [copiedIndexes, setCopiedIndexes] = useState<number | null>(null);
-
-  useEffect(() => {
-    const storedUrls = localStorage.getItem("shortenedUrls");
-    if (storedUrls) {
-      setStoredShortenedUrls(JSON.parse(storedUrls));
-    }
-  }, []);
 
   const handleCopy = async (url: string, index: number) => {
     try {
