@@ -39,6 +39,7 @@ export const URLShortenerProvider: React.FC<{ children: React.ReactNode }> = ({
   const [storedShortenedUrls, setStoredShortenedUrls] = useState<
     ShortenedUrl[]
   >([]);
+  const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
     const storedUrls = localStorage.getItem("shortenedUrls");
@@ -48,6 +49,7 @@ export const URLShortenerProvider: React.FC<{ children: React.ReactNode }> = ({
   }, []);
 
   const handleShorten = async () => {
+    setLoading(true);
     try {
       const response = await axios.get(ISGD_API_URL, {
         params: {
@@ -56,7 +58,7 @@ export const URLShortenerProvider: React.FC<{ children: React.ReactNode }> = ({
         },
       });
       if (response.data.shorturl) {
-        const newShortenedUrl = {
+        const newShortenedUrl: ShortenedUrl = {
           longUrl: currentLink,
           shortUrl: response.data.shorturl,
         };
@@ -74,8 +76,10 @@ export const URLShortenerProvider: React.FC<{ children: React.ReactNode }> = ({
       } else {
         setError("Failed to shorten URL. Please try again.");
       }
-    } catch (error: any) {
+    } catch (error) {
       setError("Failed to shorten URL. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
 

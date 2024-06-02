@@ -54,38 +54,41 @@ body .App .hero .mySwiper .swiper-slide .slide-content button:hover {
   filter: brightness(95%);
 }
 body .App .url-shortener {
-  transform: translateY(75px);
   position: relative;
   z-index: 1;
+  margin-top: 120px;
 }
-body .App .url-shortener .url-shortener-content {
+body .App .url-shortener .url-shortener-container {
+  transform: translateY(-75px);
+}
+body .App .url-shortener .url-shortener-container .url-shortener-content {
   background-color: hsl(257, 27%, 26%);
   background-image: url(/src/library/images/bg-shorten-desktop.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
-body .App .url-shortener .url-shortener-content form input[type=text] {
+body .App .url-shortener .url-shortener-container .url-shortener-content form input[type=text] {
   width: 100%;
   padding: 12px 25px;
   display: inline-block;
   box-sizing: border-box;
 }
-body .App .url-shortener .url-shortener-content form button[type=submit] {
+body .App .url-shortener .url-shortener-container .url-shortener-content form button[type=submit] {
   background-color: hsl(180, 66%, 49%);
   color: hsl(0, 0%, 100%);
   min-width: 140px;
   padding: 12px 20px;
 }
-body .App .url-shortener .url-shortener-result {
+body .App .url-shortener .url-shortener-container .url-shortener-result {
   margin-top: 20px;
 }
-body .App .url-shortener .url-shortener-result .shortened-urls {
+body .App .url-shortener .url-shortener-container .url-shortener-result .shortened-urls {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-body .App .url-shortener .url-shortener-result .shortened-urls .url-shortener-result-content {
+body .App .url-shortener .url-shortener-container .url-shortener-result .shortened-urls .url-shortener-result-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -94,20 +97,20 @@ body .App .url-shortener .url-shortener-result .shortened-urls .url-shortener-re
   padding: 15px 20px;
   border-radius: 0.5rem;
 }
-body .App .url-shortener .url-shortener-result .shortened-urls .url-shortener-result-content .current span {
+body .App .url-shortener .url-shortener-container .url-shortener-result .shortened-urls .url-shortener-result-content .current span {
   font-weight: 600;
   color: hsl(255, 11%, 22%);
 }
-body .App .url-shortener .url-shortener-result .shortened-urls .url-shortener-result-content .result {
+body .App .url-shortener .url-shortener-container .url-shortener-result .shortened-urls .url-shortener-result-content .result {
   display: flex;
   gap: 20px;
   align-items: center;
 }
-body .App .url-shortener .url-shortener-result .shortened-urls .url-shortener-result-content .result span {
+body .App .url-shortener .url-shortener-container .url-shortener-result .shortened-urls .url-shortener-result-content .result span {
   font-weight: 600;
   color: hsl(180, 66%, 49%);
 }
-body .App .url-shortener .url-shortener-result .shortened-urls .url-shortener-result-content .result button {
+body .App .url-shortener .url-shortener-container .url-shortener-result .shortened-urls .url-shortener-result-content .result button {
   background-color: hsl(180, 66%, 49%);
   color: hsl(0, 0%, 100%);
   border-radius: 5px;
@@ -115,12 +118,15 @@ body .App .url-shortener .url-shortener-result .shortened-urls .url-shortener-re
   height: 50px;
   font-weight: bold;
 }
-body .App .url-shortener .url-shortener-result .shortened-urls .url-shortener-result-content .result button:hover {
+body .App .url-shortener .url-shortener-container .url-shortener-result .shortened-urls .url-shortener-result-content .result button:hover {
   background-color: hsl(257, 27%, 26%);
 }
 body .App .features {
-  padding-top: 200px;
+  padding-top: 90px;
   padding-bottom: 210px;
+}
+body .App .features .headline {
+  margin-bottom: 40px;
 }
 body .App .features .headline span {
   font-size: 40px;
@@ -227,6 +233,42 @@ body .App footer .footer .footer-content .footer-logo a img {
   }
   body .App .hero .mySwiper .swiper-slide .slide-content button:hover {
     filter: brightness(95%);
+  }
+  body .App .url-shortener {
+    position: relative;
+    z-index: 1;
+    margin-top: 120px;
+  }
+  body .App .url-shortener .url-shortener-container {
+    transform: translateY(-75px);
+  }
+  body .App .url-shortener .url-shortener-container .url-shortener-content {
+    background-color: hsl(257, 27%, 26%);
+    background-image: url(/src/library/images/bg-shorten-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  body .App .url-shortener .url-shortener-container .url-shortener-content form input[type=text] {
+    width: 100%;
+    padding: 12px 25px;
+    display: inline-block;
+    box-sizing: border-box;
+  }
+  body .App .url-shortener .url-shortener-container .url-shortener-content form button[type=submit] {
+    background-color: hsl(180, 66%, 49%);
+    color: hsl(0, 0%, 100%);
+    min-width: 140px;
+    padding: 12px 20px;
+  }
+  body .App .url-shortener .url-shortener-container .url-shortener-result .shortened-urls .url-shortener-result-content {
+    flex-direction: column;
+  }
+  body .App .url-shortener .url-shortener-container .url-shortener-result .shortened-urls .url-shortener-result-content .current {
+    border-bottom: solid 1px hsl(0, 0%, 75%);
+  }
+  body .App .url-shortener .url-shortener-container .url-shortener-result .shortened-urls .url-shortener-result-content .result {
+    flex-direction: column;
   }
 }
 

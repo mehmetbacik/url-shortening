@@ -71,67 +71,70 @@ body {
             }
         }
         .url-shortener {
-            transform: translateY(75px);
             position: relative;
             z-index: 1;
-            .url-shortener-content {
-                background-color: $dark-violet;
-                background-image:  url(/src/library/images/bg-shorten-desktop.svg);
-                background-repeat: no-repeat;
-                background-position: center;
-                background-size: cover;
-                form {
-                    input[type=text] {
-                        width: 100%;
-                        padding: 12px 25px;
-                        display: inline-block;
-                        box-sizing: border-box;
-                    }
-                    button[type=submit] {
-                        background-color: $cyan;
-                        color: $white;
-                        min-width: 140px;
-                        padding: 12px 20px;
+            margin-top: 120px;
+            .url-shortener-container {
+                transform: translateY(-75px);
+                .url-shortener-content {
+                    background-color: $dark-violet;
+                    background-image:  url(/src/library/images/bg-shorten-desktop.svg);
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                    form {
+                        input[type=text] {
+                            width: 100%;
+                            padding: 12px 25px;
+                            display: inline-block;
+                            box-sizing: border-box;
+                        }
+                        button[type=submit] {
+                            background-color: $cyan;
+                            color: $white;
+                            min-width: 140px;
+                            padding: 12px 20px;
+                        }
                     }
                 }
-            }
-            .url-shortener-result {
-                margin-top: 20px;
-                .shortened-urls {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 10px;
-                    .url-shortener-result-content {
+                .url-shortener-result {
+                    margin-top: 20px;
+                    .shortened-urls {
                         display: flex;
-                        align-items: center;
-                        justify-content: space-between;
-                        gap: 5px;
-                        background-color: $white;
-                        padding: 15px 20px;
-                        border-radius: 0.5rem;
-                        .current {
-                            span {
-                                font-weight: 600;
-                                color: $very-dark-blue;
-                            }
-                        }
-                        .result {
+                        flex-direction: column;
+                        gap: 10px;
+                        .url-shortener-result-content {
                             display: flex;
-                            gap: 20px;
                             align-items: center;
-                            span {
-                                font-weight: 600;
-                                color: $cyan;
+                            justify-content: space-between;
+                            gap: 5px;
+                            background-color: $white;
+                            padding: 15px 20px;
+                            border-radius: 0.5rem;
+                            .current {
+                                span {
+                                    font-weight: 600;
+                                    color: $very-dark-blue;
+                                }
                             }
-                            button {
-                                background-color: $cyan;
-                                color: $white;
-                                border-radius: 5px;
-                                width: 135px;
-                                height: 50px;
-                                font-weight: bold;
-                                &:hover {
-                                    background-color: $dark-violet;
+                            .result {
+                                display: flex;
+                                gap: 20px;
+                                align-items: center;
+                                span {
+                                    font-weight: 600;
+                                    color: $cyan;
+                                }
+                                button {
+                                    background-color: $cyan;
+                                    color: $white;
+                                    border-radius: 5px;
+                                    width: 135px;
+                                    height: 50px;
+                                    font-weight: bold;
+                                    &:hover {
+                                        background-color: $dark-violet;
+                                    }
                                 }
                             }
                         }
@@ -140,9 +143,10 @@ body {
             }
         }
         .features {
-            padding-top: 200px;
+            padding-top: 90px;
             padding-bottom: 210px;
             .headline {
+                margin-bottom: 40px;
                 span {
                     font-size: 40px;
                     font-weight: bold;
@@ -265,6 +269,48 @@ body {
                                 transition: background-color 0.3s ease;
                                 &:hover {
                                     filter: brightness(95%);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .url-shortener {
+                position: relative;
+                z-index: 1;
+                margin-top: 120px;
+                .url-shortener-container {
+                    transform: translateY(-75px);
+                    .url-shortener-content {
+                        background-color: $dark-violet;
+                        background-image:  url(/src/library/images/bg-shorten-mobile.svg);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: cover;
+                        form {
+                            input[type=text] {
+                                width: 100%;
+                                padding: 12px 25px;
+                                display: inline-block;
+                                box-sizing: border-box;
+                            }
+                            button[type=submit] {
+                                background-color: $cyan;
+                                color: $white;
+                                min-width: 140px;
+                                padding: 12px 20px;
+                            }
+                        }
+                    }
+                    .url-shortener-result {
+                        .shortened-urls {
+                            .url-shortener-result-content {
+                                flex-direction: column;
+                                .current {
+                                    border-bottom: solid 1px $gray;
+                                }
+                                .result {
+                                    flex-direction: column;
                                 }
                             }
                         }

@@ -20,6 +20,12 @@ const URLShortenerResult: React.FC = () => {
     }
   };
 
+  const shortenLongUrl = (longUrl: string, maxLength: number) => {
+    return longUrl.length > maxLength
+      ? longUrl.slice(0, maxLength) + "..."
+      : longUrl;
+  };
+
   return (
     <div className="container mx-auto url-shortener-result">
       <ToastContainer />
@@ -28,7 +34,9 @@ const URLShortenerResult: React.FC = () => {
           {storedShortenedUrls.slice(0, 3).map((url, index) => (
             <div className="url-shortener-result-content" key={index}>
               <div className="current">
-                <span>{url.longUrl}</span>
+                <span title={url.longUrl}>
+                  {shortenLongUrl(url.longUrl, 25)}
+                </span>
               </div>
               <div className="result">
                 <span>{url.shortUrl}</span>
