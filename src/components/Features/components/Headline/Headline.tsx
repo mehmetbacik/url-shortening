@@ -8,7 +8,7 @@ const FeaturesView: React.FC = () => {
           Advanced Statistics
         </span>
       </div>
-      <div className="mb-12 w-1/3">
+      <div className="mb-12 w-full sm:w-1/3">
         <p>
           Track how your links are performing across the web with our advanced
           statistics dashboard.

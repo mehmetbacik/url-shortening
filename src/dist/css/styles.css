@@ -283,6 +283,34 @@ body .App footer .footer .footer-content .footer-logo a img {
     width: 100%;
     height: 40px;
   }
+  body .App .features {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+  }
+  body .App .features .headline span {
+    font-size: 24px;
+  }
+  body .App .features .headline p {
+    font-size: 16px;
+  }
+  body .App .features .features-view .features-item {
+    display: flex;
+    justify-content: center;
+  }
+  body .App .features .features-view .features-item .content span {
+    font-size: 20px;
+  }
+  body .App .features .features-view .features-item .content p {
+    font-size: 16px;
+    text-align: center;
+  }
+  body .App .features .line {
+    width: 8px;
+    height: 100%;
+    top: 0;
+    left: auto;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
