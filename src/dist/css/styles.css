@@ -311,6 +311,9 @@ body .App footer .footer .footer-content .footer-logo a img {
     top: 0;
     left: auto;
   }
+  body .App footer .footer .get-started span {
+    font-size: 22px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const NavigationOptions: React.FC = () => {
   return (
-    <div className="flex items-start gap-[4rem]">
+    <div className="flex flex-col sm:flex-row items-start gap-[4rem]">
       <nav>
         <h3 className="font-bold mb-4 text-start">
           Features
