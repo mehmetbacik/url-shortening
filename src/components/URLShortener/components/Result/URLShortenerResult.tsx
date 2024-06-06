@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import URLShortenerContext from "../../context/URLShortenerContext";
@@ -6,6 +6,7 @@ import URLShortenerContext from "../../context/URLShortenerContext";
 const URLShortenerResult: React.FC = () => {
   const { storedShortenedUrls } = useContext(URLShortenerContext);
   const [copiedIndexes, setCopiedIndexes] = useState<number | null>(null);
+  const [maxLength, setMaxLength] = useState<number>(25);
 
   const handleCopy = async (url: string, index: number) => {
     try {
@@ -20,11 +21,30 @@ const URLShortenerResult: React.FC = () => {
     }
   };
 
-  const shortenLongUrl = (longUrl: string, maxLength: number) => {
+  const shortenLongUrl = (longUrl: string) => {
     return longUrl.length > maxLength
       ? longUrl.slice(0, maxLength) + "..."
       : longUrl;
   };
+
+  const updateMaxLength = () => {
+    const width = window.innerWidth;
+    if (width < 576) {
+      setMaxLength(20);
+    } else if (width < 768) {
+      setMaxLength(20);
+    } else {
+      setMaxLength(35);
+    }
+  };
+
+  useEffect(() => {
+    updateMaxLength();
+    window.addEventListener("resize", updateMaxLength);
+    return () => {
+      window.removeEventListener("resize", updateMaxLength);
+    };
+  }, []);
 
   return (
     <div className="container mx-auto url-shortener-result">
@@ -34,9 +54,7 @@ const URLShortenerResult: React.FC = () => {
           {storedShortenedUrls.slice(0, 3).map((url, index) => (
             <div className="url-shortener-result-content" key={index}>
               <div className="current">
-                <span title={url.longUrl}>
-                  {shortenLongUrl(url.longUrl, 25)}
-                </span>
+                <span title={url.longUrl}>{shortenLongUrl(url.longUrl)}</span>
               </div>
               <div className="result">
                 <span>{url.shortUrl}</span>

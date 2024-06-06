@@ -25,7 +25,7 @@ const URLShortenerFormView: React.FC = () => {
 
   return (
     <div className="container mx-auto url-shortener-content rounded-lg">
-      <div className="py-[50px] px-[55px] relative">
+      <div className="py-[25px] sm:py-[50px] px-[25px] sm:px-[55px] relative">
         <form onSubmit={handleFormSubmit} className="flex flex-col sm:flex-row items-center gap-4">
           <input
             type="text"
