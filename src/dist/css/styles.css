@@ -212,6 +212,36 @@ body .App footer .footer .footer-content .navigation nav ul li a:hover {
 }
 
 @media (max-width: 475px) {
+  body .App header .navigation .mobile-menu {
+    position: absolute;
+    left: 0;
+    z-index: 9;
+    top: 10%;
+    width: 100%;
+  }
+  body .App header .navigation .mobile-menu .menu-content {
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
+    background-color: hsl(257, 27%, 26%);
+    padding: 40px 25px;
+  }
+  body .App header .navigation .mobile-menu .menu-content .menu-area {
+    padding-bottom: 30px;
+  }
+  body .App header .navigation .mobile-menu .menu-content .menu-area ul li a {
+    color: hsl(0, 0%, 100%);
+  }
+  body .App header .navigation .mobile-menu .menu-content .action-area {
+    border-top: solid 1px hsl(257, 7%, 63%);
+    padding-top: 30px;
+  }
+  body .App header .navigation .mobile-menu .menu-content .action-area .login {
+    color: hsl(0, 0%, 100%);
+  }
+  body .App header .navigation .mobile-menu .menu-content .action-area .signup {
+    width: 100%;
+  }
   body .App .hero {
     padding-left: 20px;
     padding-right: 20px;

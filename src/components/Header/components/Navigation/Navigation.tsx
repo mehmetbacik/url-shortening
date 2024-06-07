@@ -61,14 +61,16 @@ const Navigation: React.FC = () => {
         </button>
       </div>
       {isOpen && (
-        <div className="md:hidden">
-          <div className="menu-area">
-            <ul className="flex flex-col gap-4">
-              {renderMenuItems(menuItems)}
-            </ul>
-          </div>
-          <div className="action-area">
-            <UserActions />
+        <div className="md:hidden mobile-menu">
+          <div className="menu-content">
+            <div className="menu-area">
+              <ul className="flex flex-col gap-6 sm:gap-4">
+                {renderMenuItems(menuItems)}
+              </ul>
+            </div>
+            <div className="action-area">
+              <UserActions />
+            </div>
           </div>
         </div>
       )}

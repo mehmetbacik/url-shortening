@@ -259,6 +259,44 @@ body {
 @media (max-width: 475px) {
     body {
         .App {
+            header {
+                .navigation {
+                    .mobile-menu {
+                        position: absolute;
+                        left: 0;
+                        z-index: 9;
+                        top: 10%;
+                        width: 100%;
+                        .menu-content {
+                            margin-left: 20px;
+                            margin-right: 20px;
+                            border-radius: 10px;
+                            background-color: $dark-violet;
+                            padding: 40px 25px;
+                            .menu-area {
+                                padding-bottom: 30px;
+                                ul {
+                                    li {
+                                        a {
+                                            color: $white;
+                                        }
+                                    }
+                                }
+                            }
+                            .action-area {
+                                border-top: solid 1px $grayish-violet;
+                                padding-top: 30px;
+                                .login {
+                                    color: $white;
+                                }
+                                .signup {
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
             .hero {
                 padding-left: 20px;
                 padding-right: 20px;
