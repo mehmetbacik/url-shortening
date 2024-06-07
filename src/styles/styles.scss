@@ -256,6 +256,115 @@ body {
     }
 }
 
+@media screen and (min-width: 1024px) and (max-width:1200px) {
+    body {
+        .App {
+            .hero {
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+            .url-shortener {
+                .url-shortener-container {
+                    margin-left: 20px;
+                    margin-right: 20px;
+                }
+            }
+            .features {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            footer {
+                .footer {
+                    .footer-content {
+                        padding-left: 20px;
+                        padding-right: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width:1023px) {
+    body {
+        .App {
+            .hero {
+                margin-left: 20px;
+                margin-right: 20px;
+                .mySwiper {
+                    .swiper-slide {
+                        .slide-content {
+                            padding-right: 0px;
+                            span {
+                                font-size: 50px;
+                            }
+                            p {
+                                font-size: 20px;
+                            }
+                        }
+                    }
+                } 
+            }
+            .url-shortener {
+                .url-shortener-container {
+                    margin-left: 20px;
+                    margin-right: 20px;
+                }
+            }
+            .features {
+                padding-top: 30px;
+                padding-left: 20px;
+                padding-right: 20px;
+                .headline {
+                    span {
+                        font-size: 24px;
+                    }
+                    p {
+                        font-size: 16px;
+                    }
+                }
+                .features-view {
+                    .features-item {
+                        display: flex;
+                        justify-content: center;
+                        .content {
+                            span {
+                                font-size: 20px;
+                            }
+                            p {
+                                font-size: 16px;
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+                .line {
+                    width: 8px;
+                    height: 100%;
+                    top: 0;
+                    left: auto;
+                }
+            }
+            footer {
+                .footer {
+                    .footer-content {
+                        .navigation {
+                            width: 100%;
+                            h3 {
+                                text-align: center;
+                            }
+                        }
+                        .social {
+                            margin-top: 25px;
+                            margin-bottom: 25px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media (max-width: 767px) {
     body {
         .App {

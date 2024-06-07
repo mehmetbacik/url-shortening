@@ -7,7 +7,7 @@ import FullyImage from "../../../../library/images/icon-fully-customizable.svg"
 const FeaturesView: React.FC = () => {
   return (
     <div className="relative flex items-center justify-center animate-slideUp">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 features-view">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 features-view">
         <FeatureItem
           title="Brand Recognition"
           description="Boost your brand recognition with each click. Generic links don’t mean a thing. Branded links help instil confidence in your content."

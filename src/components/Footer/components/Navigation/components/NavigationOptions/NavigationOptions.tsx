@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 
 const NavigationOptions: React.FC = () => {
   return (
-    <div className="flex flex-col md:flex-row items-center md:items-start gap-[2rem] md:gap-[4rem] navigation">
+    <div className="flex flex-col lg:flex-row items-center lg:items-start gap-[2rem] lg:gap-[4rem] navigation">
       <nav>
         <h3 className="font-bold mb-4 text-start">
           Features
         </h3>
-        <ul className="flex flex-col items-center md:items-start gap-2">
+        <ul className="flex flex-col items-center lg:items-start gap-2">
           <li>
             <Link to="#" className="hover:text-white">
               Link Shortening
@@ -30,7 +30,7 @@ const NavigationOptions: React.FC = () => {
         <h3 className="font-bold mb-4 text-start">
           Resource
         </h3>
-        <ul className="flex flex-col items-center md:items-start gap-2">
+        <ul className="flex flex-col items-center lg:items-start gap-2">
           <li>
             <Link to="#" className="hover:text-white">
               Blog
@@ -50,7 +50,7 @@ const NavigationOptions: React.FC = () => {
       </nav>
       <nav>
         <h3 className="font-bold mb-4 text-start">Company</h3>
-        <ul className="flex flex-col items-center md:items-start gap-2">
+        <ul className="flex flex-col items-center lg:items-start gap-2">
           <li>
             <Link to="#" className="hover:text-white">
               About
