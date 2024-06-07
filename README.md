@@ -20,7 +20,7 @@ To clone the project, run the following commands:
 git clone https://github.com/mehmetbacik/url-shortening.git
 ```
 ```
-cd rest-countries-api
+cd url-shortening
 ```
 
 ## Project setup
