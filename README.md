@@ -1,3 +1,43 @@
+# URL Shortening
+
+This project is a url shortening web application. The project was developed using modern React and Typescript technologies. Tailwind CSS and CSS(SCSS) were used for interface design.
+
+## Technologies:
+
+- **React.js:**  A modern and fast library for building user interfaces.
+
+- **TypeScript:** A statically typed superset of JavaScript that adds optional types to the language.
+
+- **Tailwind CSS:** A fast and flexible CSS framework, customized for this project to provide quick and simple styling.
+
+- **SCSS:** A more powerful and feature-rich extension of CSS that enables better organization and maintainability of stylesheets.
+
+## Clone the Repository
+
+To clone the project, run the following commands:
+
+```
+git clone https://github.com/mehmetbacik/url-shortening.git
+```
+```
+cd rest-countries-api
+```
+
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm start
+```
+
+### Compiling and minimizing SCSS files for production
+```
+npm run sass-watch
+```
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +108,15 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Deploy
+
+For a detailed exploration of the project, you can visit the [deployed site here](https://url-shortening-umber.vercel.app/).
+
+## GitHub Page
+
+GitHub Repository: [https://github.com/mehmetbacik/url-shortening.git](https://github.com/mehmetbacik/url-shortening.git).
+
+## Contributions
+
+Contributions are welcome! Big or small, any contribution matters. Feel free to open a pull request or submit an issue to contribute to the project.
