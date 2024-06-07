@@ -8,7 +8,7 @@ import InstagramLogo from "../../../../../../library/images/icon-instagram.svg";
 const SocialMediaOptions: React.FC = () => {
   return (
     <>
-      <div className="flex items-center gap-6">
+      <div className="flex items-center gap-6 social">
         <Link to="#" className="text-gray-300 hover:text-white">
           <img src={FacebookLogo} alt="Facebook" />
         </Link>

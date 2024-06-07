@@ -207,6 +207,9 @@ body .App footer .footer .footer-content {
 body .App footer .footer .footer-content .footer-logo a img {
   filter: brightness(0) invert(1);
 }
+body .App footer .footer .footer-content .navigation nav ul li a:hover {
+  color: hsl(180, 66%, 49%);
+}
 
 @media (max-width: 475px) {
   body .App .hero {
@@ -313,6 +316,16 @@ body .App footer .footer .footer-content .footer-logo a img {
   }
   body .App footer .footer .get-started span {
     font-size: 22px;
+  }
+  body .App footer .footer .footer-content .navigation {
+    width: 100%;
+  }
+  body .App footer .footer .footer-content .navigation h3 {
+    text-align: center;
+  }
+  body .App footer .footer .footer-content .social {
+    margin-top: 25px;
+    margin-bottom: 25px;
   }
 }
 

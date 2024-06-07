@@ -237,6 +237,19 @@ body {
                             }
                         }
                     }
+                    .navigation {
+                        nav {
+                            ul {
+                                li {
+                                    a {
+                                        &:hover {
+                                            color: $cyan;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -369,6 +382,18 @@ body {
                     .get-started {
                         span {
                             font-size: 22px;
+                        }
+                    }
+                    .footer-content {
+                        .navigation {
+                            width: 100%;
+                            h3 {
+                                text-align: center;
+                            }
+                        }
+                        .social {
+                            margin-top: 25px;
+                            margin-bottom: 25px;
                         }
                     }
                 }
