@@ -211,7 +211,7 @@ body .App footer .footer .footer-content .navigation nav ul li a:hover {
   color: hsl(180, 66%, 49%);
 }
 
-@media (max-width: 475px) {
+@media (max-width: 767px) {
   body .App header .navigation .mobile-menu {
     position: absolute;
     left: 0;

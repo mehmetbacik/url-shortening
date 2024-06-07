@@ -13,9 +13,9 @@ const Footer: React.FC = () => {
           <div className="w-full">
             <div className="container mx-auto">
               <div className="flex items-center">
-                <div className="flex flex-col sm:flex-row justify-between items-center w-full py-[1rem] sm:py-[5rem]">
+                <div className="flex flex-col md:flex-row justify-between items-center w-full py-[1rem] md:py-[5rem]">
                   <Logo />
-                  <div className="flex gap-5 w-full sm:w-fit">
+                  <div className="flex gap-5 w-full md:w-fit">
                     <Navigation />
                   </div>
                   <SocialMedia />

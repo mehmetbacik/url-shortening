@@ -32,7 +32,7 @@ const URLShortenerResult: React.FC = () => {
     if (width < 576) {
       setMaxLength(20);
     } else if (width < 768) {
-      setMaxLength(20);
+      setMaxLength(45);
     } else {
       setMaxLength(35);
     }
